@@ -9,8 +9,8 @@ const cors = require("cors");
 const db = mysql.createPool({
   host: "localhost",
   user: "root",
-  password: "@123",
-  database: "crud_cadastro_simples",
+  password: "",
+  database: "test",
 });
 
 app.use(express.json());
@@ -58,8 +58,8 @@ app.get("/getCards", (req, res) => {
 
 
 // Update
-app.put("/edit", (req, res) => {
-  const { id } = req.body;
+app.patch("/edit/:id", (req, res) => {
+  const { id } = req.params;
   const { name } = req.body;
   const { cost } = req.body;
   const { category } = req.body;
