@@ -6,7 +6,6 @@ import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import Axios from "axios";
-import produce from "immer";
 
 export default function FormDialog(props) {
   const [editValues, setEditValues] = useState({
@@ -28,8 +27,7 @@ export default function FormDialog(props) {
   };
 
   const handleEditGame = () => {
-    Axios.put("http://localhost:3001/edit", {
-      id: editValues.id,
+    Axios.patch(`http://localhost:3001/edit/${editValues.id}`, {
       name: editValues.name,
       cost: editValues.cost,
       category: editValues.category,
