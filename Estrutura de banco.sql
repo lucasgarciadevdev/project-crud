@@ -5,7 +5,7 @@ CREATE TABLE `games` (
   `name` varchar(45) NOT NULL,
   `cost` varchar(45) NOT NULL,
   `category` varchar(45) NOT NULL,
-  PRIMARY KEY (`idgames`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO `games` VALUES 
